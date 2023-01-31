@@ -1,0 +1,31 @@
+
+
+
+@font-face {
+    font-family: "Hacen Tunisia Lt";
+    src:url("../webfonts/Hacen Tunisia/Hacen Tunisia Lt.woff") , url("../webfonts/Hacen Tunisia/Hacen Tunisia Lt.woff2") , url("../webfonts/Hacen Tunisia/Hacen Tunisia Lt.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Hacen Tunisia";
+    src:url("../webfonts/Hacen Tunisia/Hacen Tunisia.woff") , url("../webfonts/Hacen Tunisia/Hacen Tunisia.woff2") , url("../webfonts/Hacen Tunisia/Hacen Tunisia.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+@font-face {
+    font-family: "Hacen Tunisia Bd";
+    src:url("../webfonts/Hacen Tunisia/Hacen Tunisia Bd.woff") , url("../webfonts/Hacen Tunisia/Hacen Tunisia Bd.woff2") , url("../webfonts/Hacen Tunisia/Hacen Tunisia Bd.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+
