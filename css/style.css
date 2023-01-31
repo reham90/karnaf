@@ -1998,6 +1998,22 @@ top:6px
   background-color: var(--main-color);
   padding:29px 0 112px;
 }
+.brands-section{
+  background-color: var(--main-color);
+  padding:29px 0 100px;
+  text-align: center;
+}
+.brands-section .breadcrumb-sec{
+  margin-bottom: 36px;
+}
+.brands-section .trade-blocks{
+ display: flex;
+ justify-content: center;
+ margin: 0;
+}
+.brands-section .trade-blocks .trade-block{
+  width: 360px;
+}
 .about-content-text{
   display: flex;
   justify-content: space-between;
@@ -2170,7 +2186,7 @@ ol.breadcrumb li:not(.active):after {
     padding: 60px 0 40px;
     /* margin-top: 66px; */
     height: 80px;
-    margin-bottom:0;
+    margin-bottom:0 !important;
 }
 /* ol.breadcrumb {
   display: none;
@@ -2200,6 +2216,15 @@ ol.breadcrumb li:not(.active):after {
  }
  .strategic li{
   align-items: flex-start !important;
+ }
+ .brands-section .trade-blocks{
+  display: grid;
+ }
+ .brands-section .trade-blocks .trade-block{
+  width: auto;
+ }
+ .brands-section{
+  padding: 29px 0;
  }
  .contact-list li{
   margin-bottom: 12px;
@@ -2792,6 +2817,13 @@ html[dir="ltr"] .contact-list{
   }
   .trade-mark-links li a{
     font-size: 15px;
+  }
+  .brands-section .trade-blocks{
+   display: flex;
+   justify-content: center;
+  }
+  .brands-section .trade-blocks .trade-block{
+    width: 300px;
   }
 
 
