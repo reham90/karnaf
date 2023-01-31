@@ -24,11 +24,11 @@ $(document).ready(function () {
       $("body").removeClass("overflow");
     });
 
-    $(".lang-word").click(function (e) {
-      e.preventDefault();
-      var item = $(this).siblings(".dropdown-content");
-      item.slideToggle(400);
-    });
+    // $(".lang-word").click(function (e) {
+    //   e.preventDefault();
+    //   var item = $(this).siblings(".dropdown-content");
+    //   item.slideToggle(400);
+    // });
 
      ///// search in mobile /////////
      $(".fixed-search").click(function (e) {
