@@ -133,7 +133,7 @@ html[dir="ltr"] .progress-bar {
   justify-content: center;
   color: var(--sec-color);
   font-size: 40px;
-  background-color: var(--main-hover);
+  background-color: #24cc63;
   position: fixed;
   z-index: 9;
   bottom: 10px;
@@ -142,7 +142,7 @@ html[dir="ltr"] .progress-bar {
 }
 .whats-btn::after {
   display: flex;
-  background: var(--main-hover);
+  background: #24cc63;
   border-radius: 300px;
   height: 63px;
   width: 63px;
@@ -2003,8 +2003,231 @@ top:6px
   padding:29px 0 100px;
   text-align: center;
 }
+.change-padding{
+  padding: 29px 0 123px;
+  text-align: start;
+}
+.join-us-parag{
+  font-size: 24px;
+  font-family: "Hacen Tunisia Lt";
+  color: var(--sec-main-color);
+  text-align: center;
+  margin: 0 auto 30px;
+  max-width: 940px;
+}
+.join-us-form-div{
+  display: flex;
+  justify-content: center;
+}
+.join-us-form{
+ width: 555px;
+}
+.join-us-form h2{
+  width: 100%;
+  height: 50px;
+  background-color: var(--main-hover);
+  color: var(--sec-color);
+  font-size: 22px;
+  font-weight: bold;
+  margin:0 0 17px;
+  display: flex;
+  align-items: center;
+  text-align: start;
+  padding-inline-start: 15px;
+  text-transform: capitalize;
+}
+.join-us-form-label{
+  color: var(--sec-main-color);
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px;
+  text-transform: capitalize;
+  text-align: start;
+  width: 100%;
+}
+.required-2:after{
+  content:"*";
+  color: #ff0000;
+
+}
+ input[type=radio]{
+  width: 22px;
+  height: 22px;
+  -webkit-appearance : none;
+  appearance         : none;
+  background: var(--sec-color) no-repeat center center;
+  border-radius: 50%;
+  vertical-align     : top;
+  margin-inline-end: 10px;
+}
+input:where([type="checkbox"], [type="radio"]):where(:active:not(:disabled), :focus){
+ 
+  outline      : none;
+}
+
+ [type="radio"]:disabled{
+  background : var(--sec-color);
+  background-image: none !important;
+}
+
+
+
+input[type="radio"]:checked{
+  background-image : url("../images/dot.png");
+}
+.radio-label{
+  color: var(--sec-main-color);
+  font-size: 18px;
+  font-family: "Hacen Tunisia Lt";
+  margin:0 0 10px;
+}
+.special-field{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 27px;
+}
+.join-form-submit-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--sec-color);
+  font-size: 24px;
+  font-weight: bold;
+  width: 148px;
+  height: 45px;
+  background-color: rgb(217, 38, 28);
+  border-radius: 10px;
+  border:0;
+  outline: none;
+  transition: 0.5s;
+  margin:0 auto;
+  text-transform: capitalize;
+}
+.join-form-submit-btn:hover{
+  background-color: var(--main-hover);
+}
+.join-form-submit-btn:focus{
+  outline: none;
+}
+.no-label-margin{
+  margin-bottom: 10px !important;
+}
+.extra-label-margin{
+  margin-top: 17px;
+}
+.date-input{
+  position: relative;
+}
+.date-input button{
+  position: absolute;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  inset-inline-end: 20px;
+  font-size: 22px;
+  color: #b0b0b0;
+  display: flex;
+  align-items: center;
+  top:50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.date-input button:focus{
+  outline: none;
+}
+input[type=date]:required:invalid::-webkit-datetime-edit {
+  color: transparent;
+}
+input[type=date]:focus::-webkit-datetime-edit {
+  color: var(--sec-main-color) !important;
+}
+input[type="date"]::-webkit-calendar-picker-indicator { 
+  position: absolute;
+   left: 20px;
+   width: 27px;
+   height: 27px;
+   /* filter: brightness(0) invert(1); */
+   z-index: 9;
+   }
+   html[dir="ltr"] input[type="date"]::-webkit-calendar-picker-indicator{
+   transform:translateX(-8.5%);
+   left:91.5%;
+    
+   }
+input::-webkit-datetime-edit { position: relative; left: 0; }
+input::-webkit-datetime-edit-fields-wrapper { position: relative; left: 0; }
+
+
+input[type="date"]{
+  text-align: end;
+}
+html[dir="ltr"] input[type="date"]{
+  text-align: start;
+}
+.join-us-form-label span{
+  direction: ltr ;
+  display: inline-block;
+}
+html[dir="ltr"] .join-us-form-label span{
+  margin-inline-start: 5px;
+}
+.extra-title-margin{
+  margin-bottom: 40px !important;
+}
+.join-us-form textarea{
+  height: 100px !important;
+  padding: 15px !important;
+}
+.additional-input{
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  background-color:rgba(255,255,255,0.502) ;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  border: 2px solid transparent;
+  transition: 0.5s;
+  outline: none;
+}
+.additional-input:not([disabled]){
+  border: 2px solid var(--main-hover);
+  background-color: var(--sec-color);
+  pointer-events: visible;
+}
+.special-label{
+  white-space: nowrap;
+  margin-inline-end: 30px;
+}
+.additional-input::placeholder{
+  font-size: 16px;
+  color: #d0d0d0;
+  font-family: "Hacen Tunisia Lt";
+}
 .brands-section .breadcrumb-sec{
   margin-bottom: 36px;
+}
+.change-padding .about-us-head{
+  text-align: center;
+}
+.join-us-form-input{
+  height: 45px;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding:0 15px;
+  border:2px solid transparent;
+  transition: 0.5s;
+  margin: 0 0 27px;
+  outline: none;
+}
+.join-us-form-input:focus{
+  border: 2px solid var(--main-hover);
+}
+.main-input{
+  background-color: var(--sec-color);
 }
 .brands-section .trade-blocks{
  display: flex;
@@ -2666,13 +2889,15 @@ html[dir="ltr"] .contact-list{
   .licened-slider .swiper-btn{
     display: none;
   }
-  .best-employees-section{
-    padding: 25px 0 78px;
+  .join-us-parag{
+    font-size: 18px;
   }
   .licened-block .services-figure{
    
     height: 100px;
   }
+ 
+ 
   /* .licened-block{
     padding: 20px 0;
   } */
@@ -2845,4 +3070,27 @@ html[dir="ltr"] .contact-list{
     justify-content: center;
     text-align: center;
   }
+}
+
+@media only screen and (max-width: 571px)  and (min-width: 360px)  {
+  html[dir="ltr"] input[type="date"]::-webkit-calendar-picker-indicator{
+    transform:translateX(-14.5%);
+    left:85.5%;
+     
+    }
+}
+@media only screen and (max-width: 570px)  and (min-width: 397px)  {
+  html[dir="ltr"] input[type="date"]::-webkit-calendar-picker-indicator{
+    transform:translateX(-19%);
+    left:91%;
+     
+    }
+}
+
+@media only screen and (max-width: 484px)  and (min-width: 402px)  {
+  html[dir="ltr"] input[type="date"]::-webkit-calendar-picker-indicator{
+    transform:translateX(-10.5%);
+    left:87.5%;
+     
+    }
 }

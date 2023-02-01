@@ -203,3 +203,176 @@ var screen = new Swiper(".licened-slider .swiper-container", {
   },
 });
  
+
+let input = document.querySelector('.attr-sys');
+function clickKsa() {
+ 
+  input.disabled = true;
+  document.getElementById('other-n-input').checked = false;
+
+}
+
+function clickOtherN() {
+  input.disabled = false;
+  document.getElementById('ksa').checked = false;
+  document.getElementById('other-n').focus();
+}
+
+function clickSecondery() {
+ 
+  document.getElementById('other-e').disabled = true;
+ document.getElementById('other-e-input').checked = false;
+ document.getElementById('univ').checked = false;
+ document.getElementById('dep').checked = false;
+
+}
+
+function clickDeb() {
+ 
+  document.getElementById('other-e').disabled = true;
+ document.getElementById('other-e-input').checked = false;
+ document.getElementById('univ').checked = false;
+ document.getElementById('secondery').checked = false;
+
+}
+
+function clickUniv() {
+ 
+  document.getElementById('other-e').disabled = true;
+ document.getElementById('other-e-input').checked = false;
+ document.getElementById('secondery').checked = false;
+ document.getElementById('dep').checked = false;
+
+}
+function clickOtherE() {
+  document.getElementById('other-e').disabled = false;
+  document.getElementById('secondery').checked = false;
+  document.getElementById('dep').checked = false;
+  document.getElementById('univ').checked = false;
+  document.getElementById('other-e').focus();
+}
+
+function clickNoProblem() {
+ 
+  document.getElementById('have-p').disabled = true;
+ document.getElementById('have-problem').checked = false;
+
+}
+
+function clickHaveProblem() {
+  document.getElementById('have-p').disabled = false;
+ document.getElementById('no-problem').checked = false;
+ document.getElementById('have-p').focus();
+}
+
+function clickNoProblem2() {
+ 
+ document.getElementById('have-p2').disabled = true;
+document.getElementById('have-problem2').checked = false;
+
+}
+
+function clickHaveProblem2() {
+ document.getElementById('have-p2').disabled = false;
+document.getElementById('no-problem2').checked = false;
+document.getElementById('have-p2').focus();
+}
+
+function clickNoLicene() {
+ 
+ document.getElementById('have-l').disabled = true;
+document.getElementById('have-licene').checked = false;
+
+}
+
+function clickHaveLicene() {
+ document.getElementById('have-l').disabled = false;
+document.getElementById('no-licene').checked = false;
+document.getElementById('have-l').focus();
+}
+
+function clickNoSupport() {
+ 
+ document.getElementById('have-s').disabled = true;
+document.getElementById('have-support').checked = false;
+
+}
+
+function clickHaveSupport() {
+ document.getElementById('have-s').disabled = false;
+document.getElementById('no-support').checked = false;
+document.getElementById('have-s').focus();
+}
+
+function clickAllPlaces() {
+ 
+  document.getElementById('not-all-p').disabled = true;
+ document.getElementById('not-all').checked = false;
+
+}
+
+function clickNotAllPlaces() {
+  document.getElementById('not-all-p').disabled = false;
+ document.getElementById('all-places').checked = false;
+ document.getElementById('not-all-p').focus();
+}
+
+function clickNoRelatives() {
+ 
+ document.getElementById('have-r').disabled = true;
+document.getElementById('have-relatives').checked = false;
+
+}
+
+function clickHaveRelatives() {
+ document.getElementById('have-r').disabled = false;
+document.getElementById('no-relatives').checked = false;
+document.getElementById('have-r').focus();
+}
+
+function clickTwitter() {
+ 
+ document.getElementById('other-k').disabled = true;
+document.getElementById('other-k-input').checked = false;
+document.getElementById('insta').checked = false;
+document.getElementById('snap').checked = false;
+document.getElementById('friend').checked = false;
+
+}
+
+function clickInsta() {
+ 
+ document.getElementById('other-k').disabled = true;
+document.getElementById('other-k-input').checked = false;
+document.getElementById('twitter').checked = false;
+document.getElementById('snap').checked = false;
+document.getElementById('friend').checked = false;
+
+}
+
+function clickSnap() {
+ 
+ document.getElementById('other-k').disabled = true;
+document.getElementById('other-k-input').checked = false;
+document.getElementById('twitter').checked = false;
+document.getElementById('insta').checked = false;
+document.getElementById('friend').checked = false;
+
+}
+function clickFriend() {
+ 
+ document.getElementById('other-k').disabled = true;
+document.getElementById('other-k-input').checked = false;
+document.getElementById('twitter').checked = false;
+document.getElementById('snap').checked = false;
+document.getElementById('insta').checked = false;
+
+}
+function clickOtherK() {
+ document.getElementById('other-k').disabled = false;
+ document.getElementById('twitter').checked = false;
+ document.getElementById('insta').checked = false;
+ document.getElementById('snap').checked = false;
+ document.getElementById('friend').checked = false;
+ document.getElementById('other-k').focus();
+}
