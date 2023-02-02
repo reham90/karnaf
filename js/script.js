@@ -153,23 +153,23 @@ $(document).ready(function () {
       .css("padding-top", "0");
   });
   //////////** fixed arrow to top**//////////
-  // $(".arrow-top").click(function () {
-  //   $("html,body").animate(
-  //     {
-  //       scrollTop: 0,
-  //     },
-  //     1500
-  //   );
-  // });
-  // $(this).scrollTop() >= 500
-  //   ? $(".arrow-top").fadeIn(300)
-  //   : $(".arrow-top").fadeOut(300);
+  $(".arrow-top").click(function () {
+    $("html,body").animate(
+      {
+        scrollTop: 0,
+      },
+      1500
+    );
+  });
+  $(this).scrollTop() >= 500
+    ? $(".arrow-top").fadeIn(300)
+    : $(".arrow-top").fadeOut(300);
 
-  // $(window).scroll(function () {
-  //   $(this).scrollTop() >= 500
-  //     ? $(".arrow-top").fadeIn(300)
-  //     : $(".arrow-top").fadeOut(300);
-  // });
+  $(window).scroll(function () {
+    $(this).scrollTop() >= 500
+      ? $(".arrow-top").fadeIn(300)
+      : $(".arrow-top").fadeOut(300);
+  });
 });
 ///////// **licened-section** /////////
 var screen = new Swiper(".licened-slider .swiper-container", {
@@ -376,3 +376,10 @@ function clickOtherK() {
  document.getElementById('friend').checked = false;
  document.getElementById('other-k').focus();
 }
+
+$(function(){
+	window.myFlux = new flux.slider('#slider', {
+		autoplay: false,
+		pagination: true
+	});
+});

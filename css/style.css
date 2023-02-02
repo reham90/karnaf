@@ -1251,6 +1251,7 @@ html[dir="ltr"] .caption-title{
   .whats-btn{
     width: 45px;
     height: 45px;
+    z-index: 999;
     font-size: 30px;
   }
   .whats-btn::after{
@@ -2350,6 +2351,134 @@ html[dir="ltr"] .join-us-form-label span{
  }
 /*                                 about-section                         */
 
+/*                                brand-section                           */
+.brand-details{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 60px;
+}
+.brand-img{
+  background-color: var(--sec-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 245px;
+  height: 245px;
+  border: 1px solid rgb(227, 228, 230);
+  margin-inline-end: 30px;
+  margin-bottom: 0;
+}
+.brand-img figure{
+  margin: 0;
+}
+.brand-text{
+  text-align: start;
+}
+.brand-text p{
+  font-size: 18px;
+  color: var(--sec-main-color);
+  font-family: "Hacen Tunisia Lt";
+  max-width: 815px;
+  margin: 0 0 23px;
+}
+.brand-text h2{
+  text-align: start !important;
+}
+.brand-btns{
+  display: flex;
+  justify-content: flex-start;
+}
+.order-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 154px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: var(--main-hover);
+  color: var(--sec-color);
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.5s;
+  margin-inline-end: 10px;
+  text-transform: capitalize;
+}
+html[dir="ltr"] .order-btn{
+  width: 210px;
+}
+html[dir="ltr"] .shop-btn{
+  width: 250px;
+}
+.order-btn:hover{
+  background-color: var(--sec-hover);
+  color: var(--sec-color);
+  text-decoration: none;
+}
+.shop-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: var(--sec-hover);
+  color: var(--sec-color);
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.5s;
+ 
+  text-transform: capitalize;
+}
+.shop-btn:hover{
+  background-color: var(--main-hover);
+  color: var(--sec-color);
+  text-decoration: none;
+}
+.fluxslider{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  width: 100% !important;
+  height: auto !important;
+}
+.fluxslider .pagination{
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: start !important;
+  margin-top: 64px !important;
+}
+.fluxslider .pagination li{
+  width: 100%;
+  display: flex;
+  font-family: "Hacen Tunisia Lt";
+  font-size: 18px;
+  color: var(--sec-main-color);
+}
+.fluxslider .pagination li:hover{
+  color: var(--main-hover);
+}
+.flux-slider h2{
+  text-align: start !important;
+  position:absolute;
+  top:9px;
+}
+.circle-icon{
+  background-color: var(--sec-main-color);
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  color: transparent;
+  margin-inline-end: 15px;
+}
+.flux-slider{
+  position: relative;
+}
+
+/*                                brand-section                           */
+
+
 /*                  breadcrumb                        */
 .breadcrumb-sec {
   position: relative;
@@ -2394,7 +2523,7 @@ ol.breadcrumb {
   z-index: 2;
 }
  ol.breadcrumb li a,  ol.breadcrumb li span,  ol.breadcrumb li {
-  font-size: 16px;
+  font-size: 15px;
   font-family: 'Hacen Tunisia Lt';
   color: #808080;
   text-decoration: none;
@@ -2402,6 +2531,32 @@ ol.breadcrumb {
 ol.breadcrumb li:not(.active):after {
   content: "/";
   padding: 0 7px;
+}
+.brand-text h2{
+  margin-bottom: 15px;
+}
+.fluxslider .images{
+  width: 100% !important;
+ min-height: 310px !important;
+ height:340px !important;
+}
+.fluxslider .images div{
+  width: 100% !important;
+    height: 100% !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.fluxslider .pagination{
+  margin-top: 46px !important;
+}
+.flux-slider h2{
+  top:-47px;
+ 
+}
+.fluxslider{
+  flex-wrap: wrap;
+  flex-direction: column;
+  
 }
 
 @media (max-width: 991px){
@@ -2734,7 +2889,29 @@ ol.breadcrumb li:not(.active):after {
   .container-xl {
     max-width: 1170px;
   }
- 
+  .fluxslider{
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    
+  }
+  .fluxslider .images{
+    width: 600px !important;
+    height: 615px !important;
+  }
+  .brand-details{
+    margin-bottom: 50px;
+    flex-wrap: nowrap;
+  }
+  .brand-img{
+    margin-inline-end: 30px;
+    padding: 0 20px;
+  }
+  .flux-slider h2{
+    top:0;
+  }
+  .fluxslider .pagination {
+    margin-top: 56px !important;
+  }
 }
 @media (max-width: 767px) {
   .container,
@@ -2896,8 +3073,17 @@ html[dir="ltr"] .contact-list{
    
     height: 100px;
   }
- 
- 
+  .brand-details{
+    flex-wrap: wrap;
+    margin-bottom: 86px;
+  }
+  .brand-img{
+    margin-inline-end: 0;
+    margin-bottom: 20px;
+  }
+  .fluxslider .pagination {
+    margin-top: 20px !important;
+}
   /* .licened-block{
     padding: 20px 0;
   } */
@@ -2941,11 +3127,14 @@ html[dir="ltr"] .contact-list{
   .product-section{
     padding: 60px 0 10px;
   }
-  .shop-btn{
-    font-size: 15px;
-    font-family: 'Montserrat-Arabic-Regular';
-    height: 35px;
-  }
+ .brand-btns{
+  flex-wrap: wrap;
+  justify-content: center;
+ }
+ .order-btn{
+  margin-inline-end: 0;
+  margin-bottom: 15px;
+ }
   
  
  .features-blocks{
@@ -3014,7 +3203,29 @@ html[dir="ltr"] .contact-list{
   text-align: end;
   font-size: 16px;
 }
- 
+.fluxslider{
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+  
+}
+.fluxslider .images{
+  width: 600px !important;
+  height: 615px !important;
+}
+.brand-details{
+  margin-bottom: 50px;
+  flex-wrap: nowrap;
+}
+.brand-img{
+  margin-inline-end: 30px;
+  padding: 0 20px;
+}
+.flux-slider h2{
+  top:0;
+}
+.fluxslider .pagination {
+  margin-top: 56px !important;
+}
 }
 @media (min-width: 763px) and (max-width: 981px)  {
  
@@ -3050,7 +3261,29 @@ html[dir="ltr"] .contact-list{
   .brands-section .trade-blocks .trade-block{
     width: 300px;
   }
-
+  .fluxslider{
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    
+  }
+  .fluxslider .images{
+    width: 400px !important;
+    height: 415px !important;
+  }
+  .brand-details{
+    margin-bottom: 50px;
+    flex-wrap: nowrap;
+  }
+  .brand-img{
+    margin-inline-end: 30px;
+    padding: 0 20px;
+  }
+  .flux-slider h2{
+    top:0;
+  }
+  .fluxslider .pagination {
+    margin-top: 46px !important;
+}
 
 
 
@@ -3093,4 +3326,44 @@ html[dir="ltr"] .contact-list{
     left:87.5%;
      
     }
+}
+@media (min-width:414px) and (max-width: 991px){
+  .order-btn{
+    margin-inline-end: 10px;
+  }
+}
+@media (min-width:378px) and (max-width: 766px){
+  .fluxslider .images{
+    height: 550px !important;
+  }
+}
+@media (min-width:378px) and (max-width: 400px){
+  .fluxslider .pagination{
+    margin-top: -160px !important;
+  }
+}
+@media (min-width:400px) and (max-width: 572px){
+  .fluxslider .pagination{
+    margin-top: -120px !important;
+  }
+}
+@media (min-width:450px) and (max-width: 487px){
+  .fluxslider .pagination{
+    margin-top: -90px !important;
+  }
+}
+@media (min-width:487px) and (max-width: 513px){
+  .fluxslider .pagination{
+    margin-top: -60px !important;
+  }
+}
+@media (min-width:513px) and (max-width: 548px){
+  .fluxslider .pagination{
+    margin-top: -30px !important;
+  }
+}
+@media (min-width:548px) and (max-width: 572px){
+  .fluxslider .pagination{
+    margin-top: 0 !important;
+  }
 }
