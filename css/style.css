@@ -225,7 +225,7 @@ html[dir="ltr"] .progress-bar {
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: var(--main-hover);
+  color: var(--sec-main-color);
   padding: 5px 15px;
   text-decoration: none;
   display: block;
@@ -235,7 +235,7 @@ html[dir="ltr"] .progress-bar {
 }
 .dropdown-content a:hover {
   color: var(--main-hover);
-  opacity: 0.7;
+ 
 }
 
 /* Show the dropdown menu on hover */
@@ -864,14 +864,11 @@ font-size: 14px;
 
  
   border:1px solid rgb(150, 148, 148);
-  border-right: 0;
+
   outline: none;
   transition: all 0.3s ease-in-out;
 }
-html[dir="ltr"] .search-input{
-  border-right: 1px solid rgb(150, 148, 148) ;
-  border-left: 0;
-}
+
 
 
 
@@ -924,10 +921,19 @@ html[dir="ltr"] .search-button {
   border: 1px solid rgb(150, 148, 148);
   outline: none;
   margin-inline-end: 10px;
+  transition: 0.5s;
+}
+.share-btn:hover{
+  background: var(--sec-hover);
+  border: 1px solid var(--sec-hover);
+}
+.share-btn:hover i{
+  color: var(--sec-color);
 }
 .share-btn i{
   color: var(--sec-hover);
   font-size: 22px;
+  transition: 0.5s;
 }
 .share-btn:focus{
  
@@ -944,7 +950,7 @@ html[dir="ltr"] .search-button {
   align-items: center;
   padding-inline-start: 15px;
   border: 1px solid rgb(150, 148, 148);
-  border-left: 0;
+ transition: 0.5s;
   outline: none;
   color: var(--sec-main-color);
   font-size: 16px;
@@ -952,9 +958,13 @@ html[dir="ltr"] .search-button {
   background-color: var(--sec-color);
   position: relative;
 }
-html[dir="ltr"] .go-store-btn{
-  border-left:1px solid rgb(150, 148, 148);
-  border-right: 0 ;
+.go-store-btn:hover{
+  background-color: var(--main-hover);
+  color: var(--sec-color);
+  border: 1px solid var(--main-hover);
+}
+.go-store-btn:hover i{
+  color: var(--sec-color);
 }
 .go-store-btn i{
   color: var(--main-hover);
@@ -963,6 +973,7 @@ html[dir="ltr"] .go-store-btn{
   inset-inline-end: 18px;
   top:50%;
   transform: translateY(-50%);
+  transition: 0.5s;
 }
 html[dir="ltr"] .go-store-btn i{
   transform: translateY(-50%) scaleX(-1);
@@ -2127,7 +2138,8 @@ input[type="radio"]:checked{
   border: 0;
   inset-inline-end: 20px;
   font-size: 22px;
-  color: #b0b0b0;
+  /* color: #b0b0b0; */
+  color: var(--sec-main-color);
   display: flex;
   align-items: center;
   top:50%;
@@ -2662,9 +2674,12 @@ ol.breadcrumb li:not(.active):after {
 .footer-content{
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
 }
 .footer-links{
   margin-bottom: 15px;
+  width: 100%;
+  justify-content: center;
 }
   .clearfix{
     display: flex;
@@ -2845,14 +2860,14 @@ ol.breadcrumb li:not(.active):after {
   cursor: pointer;
   z-index: 10;
   background-color: var(--main-hover);
-  opacity: 0.95;
+  /* opacity: 0.95; */
   display: none;
 }
 /*                                 arrow-top                           */
 .arrow-top {
   position: fixed;
   bottom: 15px;
-  inset-inline-start: 15px;
+  inset-inline-end: 15px;
   display: none;
   z-index: 10;
   text-decoration: none !important;
@@ -3007,6 +3022,9 @@ ol.breadcrumb li:not(.active):after {
     justify-content: end !important;
     margin-inline-end: 13px;
     font-size: 14px !important;
+  }
+  .footer-links{
+    margin-bottom: 15px !important;
   }
   .clearfix div{
     padding: 0;
