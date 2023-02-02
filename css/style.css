@@ -2893,7 +2893,7 @@ ol.breadcrumb li:not(.active):after {
 @media (max-width: 767px) {
   .arrow-top {
     bottom: 10px;
-    inset-inline-start: 10px;
+    inset-inline-end: 10px;
   }
 }
 @media (min-width: 1200px) {
