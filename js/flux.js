@@ -782,490 +782,490 @@ window.flux = {
 	};
 })(window.jQuery || window.Zepto);
 
-(function($) {
-	flux.transitions.bars = function(fluxslider, opts) {
-		return new flux.transition_grid(fluxslider, $.extend({
-			columns: 10,
-			rows: 1,
-			delayBetweenBars: 40,
-			renderTile: function(elem, colIndex, rowIndex, colWidth, rowHeight, leftOffset, topOffset) {
-				$(elem).css({
-					'background-image': this.slider.image1.css('background-image'),
-					'background-position': '-'+leftOffset+'px 0px'
-				}).css3({
-					'transition-duration': '400ms',
-					'transition-timing-function': 'ease-in',
-					'transition-property': 'all',
-					'transition-delay': (colIndex*this.options.delayBetweenBars)+'ms'
-				});
-			},
-			execute: function() {
-				var _this = this;
+// (function($) {
+// 	flux.transitions.bars = function(fluxslider, opts) {
+// 		return new flux.transition_grid(fluxslider, $.extend({
+// 			columns: 10,
+// 			rows: 1,
+// 			delayBetweenBars: 40,
+// 			renderTile: function(elem, colIndex, rowIndex, colWidth, rowHeight, leftOffset, topOffset) {
+// 				$(elem).css({
+// 					'background-image': this.slider.image1.css('background-image'),
+// 					'background-position': '-'+leftOffset+'px 0px'
+// 				}).css3({
+// 					'transition-duration': '400ms',
+// 					'transition-timing-function': 'ease-in',
+// 					'transition-property': 'all',
+// 					'transition-delay': (colIndex*this.options.delayBetweenBars)+'ms'
+// 				});
+// 			},
+// 			execute: function() {
+// 				var _this = this;
 	
-				var height = this.slider.image1.height();
+// 				var height = this.slider.image1.height();
 	
-				var bars = this.slider.image1.find('div.tile');
+// 				var bars = this.slider.image1.find('div.tile');
 	
-				// Get notified when the last transition has completed
-				$(bars[bars.length-1]).transitionEnd(function(){
-					_this.finished();
-				});
+// 				// Get notified when the last transition has completed
+// 				$(bars[bars.length-1]).transitionEnd(function(){
+// 					_this.finished();
+// 				});
 				
-				setTimeout(function(){
-					bars.css({
-						'opacity': '0.5'
-					}).css3({
-						'transform': flux.browser.translate(0, height)
-					});
-				}, 50);
+// 				setTimeout(function(){
+// 					bars.css({
+// 						'opacity': '0.5'
+// 					}).css3({
+// 						'transform': flux.browser.translate(0, height)
+// 					});
+// 				}, 50);
 				
-			}
-		}, opts));
-	};
-})(window.jQuery || window.Zepto);
+// 			}
+// 		}, opts));
+// 	};
+// })(window.jQuery || window.Zepto);
 
-(function($) {
-	flux.transitions.bars3d = function(fluxslider, opts) {
-		return new flux.transition_grid(fluxslider, $.extend({
-			requires3d: true,
-			columns: 7,
-			rows: 1,
-			delayBetweenBars: 150,
-			perspective: 1000,
-			renderTile: function(elem, colIndex, rowIndex, colWidth, rowHeight, leftOffset, topOffset) {
-				var bar = $('<div class="bar-'+colIndex+'"></div>').css({
-					width: colWidth+'px',
-					height: '100%',
-					position: 'absolute',
-					top: '0px',
-					left: '0px',
-					'z-index': 200,
+// (function($) {
+// 	flux.transitions.bars3d = function(fluxslider, opts) {
+// 		return new flux.transition_grid(fluxslider, $.extend({
+// 			requires3d: true,
+// 			columns: 7,
+// 			rows: 1,
+// 			delayBetweenBars: 150,
+// 			perspective: 1000,
+// 			renderTile: function(elem, colIndex, rowIndex, colWidth, rowHeight, leftOffset, topOffset) {
+// 				var bar = $('<div class="bar-'+colIndex+'"></div>').css({
+// 					width: colWidth+'px',
+// 					height: '100%',
+// 					position: 'absolute',
+// 					top: '0px',
+// 					left: '0px',
+// 					'z-index': 200,
 
-					'background-image': this.slider.image1.css('background-image'),
-					'background-position': '-'+leftOffset+'px 0px',
-					'background-repeat': 'no-repeat'
-				}).css3({
-					'backface-visibility': 'hidden'
-				}),
+// 					'background-image': this.slider.image1.css('background-image'),
+// 					'background-position': '-'+leftOffset+'px 0px',
+// 					'background-repeat': 'no-repeat'
+// 				}).css3({
+// 					'backface-visibility': 'hidden'
+// 				}),
 
-				bar2 = $(bar.get(0).cloneNode(false)).css({
-					'background-image': this.slider.image2.css('background-image')
-				}).css3({
-					'transform': flux.browser.rotateX(90) + ' ' + flux.browser.translate(0, -rowHeight/2, rowHeight/2)
-				}),
+// 				bar2 = $(bar.get(0).cloneNode(false)).css({
+// 					'background-image': this.slider.image2.css('background-image')
+// 				}).css3({
+// 					'transform': flux.browser.rotateX(90) + ' ' + flux.browser.translate(0, -rowHeight/2, rowHeight/2)
+// 				}),
 
-				left = $('<div class="side bar-'+colIndex+'"></div>').css({
-					width: rowHeight+'px',
-					height: rowHeight+'px',
-					position: 'absolute',
-					top: '0px',
-					left: '0px',
-					background: '#222',
-					'z-index': 190
-				}).css3({
-					'transform': flux.browser.rotateY(90) + ' ' + flux.browser.translate(rowHeight/2, 0, -rowHeight/2) + ' ' + flux.browser.rotateY(180),
-					'backface-visibility': 'hidden'
-				}),
+// 				left = $('<div class="side bar-'+colIndex+'"></div>').css({
+// 					width: rowHeight+'px',
+// 					height: rowHeight+'px',
+// 					position: 'absolute',
+// 					top: '0px',
+// 					left: '0px',
+// 					background: '#222',
+// 					'z-index': 190
+// 				}).css3({
+// 					'transform': flux.browser.rotateY(90) + ' ' + flux.browser.translate(rowHeight/2, 0, -rowHeight/2) + ' ' + flux.browser.rotateY(180),
+// 					'backface-visibility': 'hidden'
+// 				}),
 
-				right = $(left.get(0).cloneNode(false)).css3({
-					'transform': flux.browser.rotateY(90) + ' ' + flux.browser.translate(rowHeight/2, 0, colWidth-rowHeight/2)
-				});
+// 				right = $(left.get(0).cloneNode(false)).css3({
+// 					'transform': flux.browser.rotateY(90) + ' ' + flux.browser.translate(rowHeight/2, 0, colWidth-rowHeight/2)
+// 				});
 
-				$(elem).css({
-					width: colWidth+'px',
-					height: '100%',
-					position: 'absolute',
-					top: '0px',
-					left: leftOffset+'px',
-					'z-index': colIndex > this.options.columns/2 ? 1000-colIndex : 1000 // Fix for Chrome to ensure that the z-index layering is correct!
-				}).css3({
-					'transition-duration': '800ms',
-					'transition-timing-function': 'linear',
-					'transition-property': 'all',
-					'transition-delay': (colIndex*this.options.delayBetweenBars)+'ms',
-					'transform-style': 'preserve-3d'
-				}).append(bar).append(bar2).append(left).append(right);
-			},
-			execute: function() {
-				this.slider.image1.css3({
-					'perspective': this.options.perspective,
-					'perspective-origin': '50% 50%'
-				}).css({
-					'-moz-transform': 'perspective('+this.options.perspective+'px)',
-					'-moz-perspective': 'none',
-					'-moz-transform-style': 'preserve-3d'
-				});
+// 				$(elem).css({
+// 					width: colWidth+'px',
+// 					height: '100%',
+// 					position: 'absolute',
+// 					top: '0px',
+// 					left: leftOffset+'px',
+// 					'z-index': colIndex > this.options.columns/2 ? 1000-colIndex : 1000 // Fix for Chrome to ensure that the z-index layering is correct!
+// 				}).css3({
+// 					'transition-duration': '800ms',
+// 					'transition-timing-function': 'linear',
+// 					'transition-property': 'all',
+// 					'transition-delay': (colIndex*this.options.delayBetweenBars)+'ms',
+// 					'transform-style': 'preserve-3d'
+// 				}).append(bar).append(bar2).append(left).append(right);
+// 			},
+// 			execute: function() {
+// 				this.slider.image1.css3({
+// 					'perspective': this.options.perspective,
+// 					'perspective-origin': '50% 50%'
+// 				}).css({
+// 					'-moz-transform': 'perspective('+this.options.perspective+'px)',
+// 					'-moz-perspective': 'none',
+// 					'-moz-transform-style': 'preserve-3d'
+// 				});
 				
-				var _this = this,
-					height = this.slider.image1.height(),
-					bars = this.slider.image1.find('div.tile');
+// 				var _this = this,
+// 					height = this.slider.image1.height(),
+// 					bars = this.slider.image1.find('div.tile');
 
-				this.slider.image2.hide();
+// 				this.slider.image2.hide();
 
-				// Get notified when the last transition has completed
-				bars.last().transitionEnd(function(event){
-					_this.slider.image1.css3({
-						'transform-style': 'flat'
-					});
+// 				// Get notified when the last transition has completed
+// 				bars.last().transitionEnd(function(event){
+// 					_this.slider.image1.css3({
+// 						'transform-style': 'flat'
+// 					});
 					
-					_this.slider.image2.show();
+// 					_this.slider.image2.show();
 
-					_this.finished();
-				});
+// 					_this.finished();
+// 				});
 				
-				setTimeout(function(){
-					bars.css3({
-						'transform': flux.browser.rotateX(-90) + ' ' + flux.browser.translate(0, height/2, height/2)
-					});
-				}, 50);
-			}
-		}, opts));
-	};
-})(window.jQuery || window.Zepto);
+// 				setTimeout(function(){
+// 					bars.css3({
+// 						'transform': flux.browser.rotateX(-90) + ' ' + flux.browser.translate(0, height/2, height/2)
+// 					});
+// 				}, 50);
+// 			}
+// 		}, opts));
+// 	};
+// })(window.jQuery || window.Zepto);
 
-(function($) {	
-	flux.transitions.blinds = function(fluxslider, opts) {
-		return new flux.transitions.bars(fluxslider, $.extend({
-			execute: function() {
-				var _this = this;
+// (function($) {	
+// 	flux.transitions.blinds = function(fluxslider, opts) {
+// 		return new flux.transitions.bars(fluxslider, $.extend({
+// 			execute: function() {
+// 				var _this = this;
 
-				var height = this.slider.image1.height();
+// 				var height = this.slider.image1.height();
 
-				var bars = this.slider.image1.find('div.tile');
+// 				var bars = this.slider.image1.find('div.tile');
 
-				// Get notified when the last transition has completed
-				$(bars[bars.length-1]).transitionEnd(function(){
-					_this.finished();
-				});
+// 				// Get notified when the last transition has completed
+// 				$(bars[bars.length-1]).transitionEnd(function(){
+// 					_this.finished();
+// 				});
 				
-				setTimeout(function(){
-					bars.css({
-						'opacity': '0.5'
-					}).css3({
-						'transform': 'scalex(0.0001)'
-					});
-				}, 50);
-			}
-		}, opts));
-	}
-})(window.jQuery || window.Zepto);
+// 				setTimeout(function(){
+// 					bars.css({
+// 						'opacity': '0.5'
+// 					}).css3({
+// 						'transform': 'scalex(0.0001)'
+// 					});
+// 				}, 50);
+// 			}
+// 		}, opts));
+// 	}
+// })(window.jQuery || window.Zepto);
 
-(function($) {
-	flux.transitions.blinds3d = function(fluxslider, opts) {
-		return new flux.transitions.tiles3d(fluxslider, $.extend({
-			forceSquare: false,
-			rows: 1,
-			columns: 6
-		}, opts));
-	};
-})(window.jQuery || window.Zepto);
+// (function($) {
+// 	flux.transitions.blinds3d = function(fluxslider, opts) {
+// 		return new flux.transitions.tiles3d(fluxslider, $.extend({
+// 			forceSquare: false,
+// 			rows: 1,
+// 			columns: 6
+// 		}, opts));
+// 	};
+// })(window.jQuery || window.Zepto);
 
-(function($) {
-	flux.transitions.zip = function(fluxslider, opts) {
-		return new flux.transitions.bars(fluxslider, $.extend({
-			execute: function() {
-				var _this = this;
+// (function($) {
+// 	flux.transitions.zip = function(fluxslider, opts) {
+// 		return new flux.transitions.bars(fluxslider, $.extend({
+// 			execute: function() {
+// 				var _this = this;
 
-				var height = this.slider.image1.height();
+// 				var height = this.slider.image1.height();
 
-				var bars = this.slider.image1.find('div.tile');
+// 				var bars = this.slider.image1.find('div.tile');
 
-				// Get notified when the last transition has completed
-				$(bars[bars.length-1]).transitionEnd(function(){
-					_this.finished();
-				});
+// 				// Get notified when the last transition has completed
+// 				$(bars[bars.length-1]).transitionEnd(function(){
+// 					_this.finished();
+// 				});
 				
-				setTimeout(function(){
-					bars.each(function(index, bar){						
-						$(bar).css({
-							'opacity': '0.3'
-						}).css3({
-							'transform': flux.browser.translate(0, (index%2 ? '-'+(2*height) : height))
-						});		
-					});
-				}, 20);
-			}
-		}, opts));
-	};
-})(window.jQuery || window.Zepto);
+// 				setTimeout(function(){
+// 					bars.each(function(index, bar){						
+// 						$(bar).css({
+// 							'opacity': '0.3'
+// 						}).css3({
+// 							'transform': flux.browser.translate(0, (index%2 ? '-'+(2*height) : height))
+// 						});		
+// 					});
+// 				}, 20);
+// 			}
+// 		}, opts));
+// 	};
+// })(window.jQuery || window.Zepto);
 
-(function($) {
-	flux.transitions.blocks = function(fluxslider, opts) {
-		return new flux.transition_grid(fluxslider, $.extend({
-			forceSquare: true,
-			delayBetweenBars: 100,
-			renderTile: function(elem, colIndex, rowIndex, colWidth, rowHeight, leftOffset, topOffset) {
-				var delay = Math.floor(Math.random()*10*this.options.delayBetweenBars);
+// (function($) {
+// 	flux.transitions.blocks = function(fluxslider, opts) {
+// 		return new flux.transition_grid(fluxslider, $.extend({
+// 			forceSquare: true,
+// 			delayBetweenBars: 100,
+// 			renderTile: function(elem, colIndex, rowIndex, colWidth, rowHeight, leftOffset, topOffset) {
+// 				var delay = Math.floor(Math.random()*10*this.options.delayBetweenBars);
 				
-				$(elem).css({
-					'background-image': this.slider.image1.css('background-image'),
-					'background-position': '-'+leftOffset+'px -'+topOffset+'px'
-				}).css3({
-					'transition-duration': '350ms',
-					'transition-timing-function': 'ease-in',
-					'transition-property': 'all',
-					'transition-delay': delay+'ms'
-				});
+// 				$(elem).css({
+// 					'background-image': this.slider.image1.css('background-image'),
+// 					'background-position': '-'+leftOffset+'px -'+topOffset+'px'
+// 				}).css3({
+// 					'transition-duration': '350ms',
+// 					'transition-timing-function': 'ease-in',
+// 					'transition-property': 'all',
+// 					'transition-delay': delay+'ms'
+// 				});
 				
-				// Keep track of the last elem to fire
-				if(this.maxDelay === undefined)
-					this.maxDelay = 0;
+// 				// Keep track of the last elem to fire
+// 				if(this.maxDelay === undefined)
+// 					this.maxDelay = 0;
 					
-				if(delay > this.maxDelay)
-				{
-					this.maxDelay = delay;
-					this.maxDelayTile = elem;
-				}
-			},
-			execute: function() {
-				var _this = this;
+// 				if(delay > this.maxDelay)
+// 				{
+// 					this.maxDelay = delay;
+// 					this.maxDelayTile = elem;
+// 				}
+// 			},
+// 			execute: function() {
+// 				var _this = this;
 	
-				var blocks = this.slider.image1.find('div.tile');
+// 				var blocks = this.slider.image1.find('div.tile');
 	
-				// Get notified when the last transition has completed
-				this.maxDelayTile.transitionEnd(function(){
-					_this.finished();
-				});
+// 				// Get notified when the last transition has completed
+// 				this.maxDelayTile.transitionEnd(function(){
+// 					_this.finished();
+// 				});
 	
-				setTimeout(function(){
-					blocks.each(function(index, block){				
-						$(block).css({
-							'opacity': '0'
-						}).css3({
-							'transform': 'scale(0.8)'
-						});
-					});
-				}, 50);
-			}
-		}, opts));
-	};
-})(window.jQuery || window.Zepto);
+// 				setTimeout(function(){
+// 					blocks.each(function(index, block){				
+// 						$(block).css({
+// 							'opacity': '0'
+// 						}).css3({
+// 							'transform': 'scale(0.8)'
+// 						});
+// 					});
+// 				}, 50);
+// 			}
+// 		}, opts));
+// 	};
+// })(window.jQuery || window.Zepto);
 
-(function($) {
-	flux.transitions.blocks2 = function(fluxslider, opts) {
-		return new flux.transition_grid(fluxslider, $.extend({
-			cols: 12,
-			forceSquare: true,
-			delayBetweenDiagnols: 150,
-			renderTile: function(elem, colIndex, rowIndex, colWidth, rowHeight, leftOffset, topOffset) {
-				var delay = Math.floor(Math.random()*10*this.options.delayBetweenBars);
+// (function($) {
+// 	flux.transitions.blocks2 = function(fluxslider, opts) {
+// 		return new flux.transition_grid(fluxslider, $.extend({
+// 			cols: 12,
+// 			forceSquare: true,
+// 			delayBetweenDiagnols: 150,
+// 			renderTile: function(elem, colIndex, rowIndex, colWidth, rowHeight, leftOffset, topOffset) {
+// 				var delay = Math.floor(Math.random()*10*this.options.delayBetweenBars);
 				
-				$(elem).css({
-					'background-image': this.slider.image1.css('background-image'),
-					'background-position': '-'+leftOffset+'px -'+topOffset+'px'
-				}).css3({
-					'transition-duration': '350ms',
-					'transition-timing-function': 'ease-in',
-					'transition-property': 'all',
-					'transition-delay': (colIndex+rowIndex)*this.options.delayBetweenDiagnols+'ms',
-					'backface-visibility': 'hidden' // trigger hardware acceleration
-				});
-			},
-			execute: function() {
-				var _this = this;
+// 				$(elem).css({
+// 					'background-image': this.slider.image1.css('background-image'),
+// 					'background-position': '-'+leftOffset+'px -'+topOffset+'px'
+// 				}).css3({
+// 					'transition-duration': '350ms',
+// 					'transition-timing-function': 'ease-in',
+// 					'transition-property': 'all',
+// 					'transition-delay': (colIndex+rowIndex)*this.options.delayBetweenDiagnols+'ms',
+// 					'backface-visibility': 'hidden' // trigger hardware acceleration
+// 				});
+// 			},
+// 			execute: function() {
+// 				var _this = this;
 	
-				var blocks = this.slider.image1.find('div.tile');
+// 				var blocks = this.slider.image1.find('div.tile');
 	
-				// Get notified when the last transition has completed
-				blocks.last().transitionEnd(function(){
-					_this.finished();
-				});
+// 				// Get notified when the last transition has completed
+// 				blocks.last().transitionEnd(function(){
+// 					_this.finished();
+// 				});
 				
-				setTimeout(function(){
-					blocks.each(function(index, block){				
-						$(block).css({
-							'opacity': '0'
-						}).css3({
-							'transform': 'scale(0.8)'
-						});
-					});
-				}, 50);
-			}
-		}, opts));
-	};
-})(window.jQuery || window.Zepto);
+// 				setTimeout(function(){
+// 					blocks.each(function(index, block){				
+// 						$(block).css({
+// 							'opacity': '0'
+// 						}).css3({
+// 							'transform': 'scale(0.8)'
+// 						});
+// 					});
+// 				}, 50);
+// 			}
+// 		}, opts));
+// 	};
+// })(window.jQuery || window.Zepto);
 
-(function($) {
-	flux.transitions.concentric = function(fluxslider, opts) {
-		return new flux.transition(fluxslider, $.extend({
-			blockSize: 60,
-			delay: 150,
-			alternate: false,
-			setup: function() {
-				var w = this.slider.image1.width(),
-					h = this.slider.image1.height(),
-					largestLength = Math.sqrt(w*w + h*h), // Largest length is the diagonal
+// (function($) {
+// 	flux.transitions.concentric = function(fluxslider, opts) {
+// 		return new flux.transition(fluxslider, $.extend({
+// 			blockSize: 60,
+// 			delay: 150,
+// 			alternate: false,
+// 			setup: function() {
+// 				var w = this.slider.image1.width(),
+// 					h = this.slider.image1.height(),
+// 					largestLength = Math.sqrt(w*w + h*h), // Largest length is the diagonal
 
-					// How many blocks do we need?
-					blockCount = Math.ceil(((largestLength-this.options.blockSize)/2) / this.options.blockSize) + 1, // 1 extra to account for the round border
-					fragment = document.createDocumentFragment();
+// 					// How many blocks do we need?
+// 					blockCount = Math.ceil(((largestLength-this.options.blockSize)/2) / this.options.blockSize) + 1, // 1 extra to account for the round border
+// 					fragment = document.createDocumentFragment();
 
-				for(var i=0; i<blockCount; i++)
-				{
-					var thisBlockSize = (2*i*this.options.blockSize)+this.options.blockSize;
+// 				for(var i=0; i<blockCount; i++)
+// 				{
+// 					var thisBlockSize = (2*i*this.options.blockSize)+this.options.blockSize;
 
-					var block = $('<div></div>').attr('class', 'block block-'+i).css({
-						width: thisBlockSize+'px',
-						height: thisBlockSize+'px',
-						position: 'absolute',
-						top: ((h-thisBlockSize)/2)+'px',
-						left: ((w-thisBlockSize)/2)+'px',
+// 					var block = $('<div></div>').attr('class', 'block block-'+i).css({
+// 						width: thisBlockSize+'px',
+// 						height: thisBlockSize+'px',
+// 						position: 'absolute',
+// 						top: ((h-thisBlockSize)/2)+'px',
+// 						left: ((w-thisBlockSize)/2)+'px',
 
-						'z-index': 100+(blockCount-i),
+// 						'z-index': 100+(blockCount-i),
 
-						'background-image': this.slider.image1.css('background-image'),
-						'background-position': 'center center'
-					}).css3({
-						'border-radius': thisBlockSize+'px',
-						'transition-duration': '800ms',
-						'transition-timing-function': 'linear',
-						'transition-property': 'all',
-						'transition-delay': ((blockCount-i)*this.options.delay)+'ms'
-					});
+// 						'background-image': this.slider.image1.css('background-image'),
+// 						'background-position': 'center center'
+// 					}).css3({
+// 						'border-radius': thisBlockSize+'px',
+// 						'transition-duration': '800ms',
+// 						'transition-timing-function': 'linear',
+// 						'transition-property': 'all',
+// 						'transition-delay': ((blockCount-i)*this.options.delay)+'ms'
+// 					});
 
-					fragment.appendChild(block.get(0));
-				}
+// 					fragment.appendChild(block.get(0));
+// 				}
 
-				//this.slider.image1.append($(fragment));
-				this.slider.image1.get(0).appendChild(fragment);
-			},
-			execute: function() {
-				var _this = this;
+// 				//this.slider.image1.append($(fragment));
+// 				this.slider.image1.get(0).appendChild(fragment);
+// 			},
+// 			execute: function() {
+// 				var _this = this;
 
-				var blocks = this.slider.image1.find('div.block');
+// 				var blocks = this.slider.image1.find('div.block');
 
-				// Get notified when the last transition has completed
-				$(blocks[0]).transitionEnd(function(){
-					_this.finished();
-				});
+// 				// Get notified when the last transition has completed
+// 				$(blocks[0]).transitionEnd(function(){
+// 					_this.finished();
+// 				});
 
-				setTimeout(function(){
-					blocks.each(function(index, block){
-						$(block).css({
-							'opacity': '0'
-						}).css3({
-							'transform': flux.browser.rotateZ((!_this.options.alternate || index%2 ? '' : '-')+'90')
-						});
-					});
-				}, 50);
-			}
-		}, opts));
-	};
-})(window.jQuery || window.Zepto);
+// 				setTimeout(function(){
+// 					blocks.each(function(index, block){
+// 						$(block).css({
+// 							'opacity': '0'
+// 						}).css3({
+// 							'transform': flux.browser.rotateZ((!_this.options.alternate || index%2 ? '' : '-')+'90')
+// 						});
+// 					});
+// 				}, 50);
+// 			}
+// 		}, opts));
+// 	};
+// })(window.jQuery || window.Zepto);
 
-(function($) {
-	flux.transitions.warp = function(fluxslider, opts) {
-		return new flux.transitions.concentric(fluxslider, $.extend({
-			delay: 30,
-			alternate: true
-		}, opts));
-	};
-})(window.jQuery || window.Zepto);
+// (function($) {
+// 	flux.transitions.warp = function(fluxslider, opts) {
+// 		return new flux.transitions.concentric(fluxslider, $.extend({
+// 			delay: 30,
+// 			alternate: true
+// 		}, opts));
+// 	};
+// })(window.jQuery || window.Zepto);
 
-(function($) {
-	flux.transitions.cube = function(fluxslider, opts) {
-		return new flux.transition(fluxslider, $.extend({
-			requires3d: true,
-			barWidth: 100,
-			direction: 'left',
-			perspective: 1000,
-			setup: function() {
-				var width = this.slider.image1.width();
-				var height = this.slider.image1.height();
+// (function($) {
+// 	flux.transitions.cube = function(fluxslider, opts) {
+// 		return new flux.transition(fluxslider, $.extend({
+// 			requires3d: true,
+// 			barWidth: 100,
+// 			direction: 'left',
+// 			perspective: 1000,
+// 			setup: function() {
+// 				var width = this.slider.image1.width();
+// 				var height = this.slider.image1.height();
 
-				// Setup the container to allow 3D perspective
+// 				// Setup the container to allow 3D perspective
 
-				this.slider.image1.css3({
-					'perspective': this.options.perspective,
-					'perspective-origin': '50% 50%'
-				});
+// 				this.slider.image1.css3({
+// 					'perspective': this.options.perspective,
+// 					'perspective-origin': '50% 50%'
+// 				});
 
-				this.cubeContainer = $('<div class="cube"></div>').css({
-					width: width+'px',
-					height: height+'px',
-					position: 'relative'
-				}).css3({
-					'transition-duration': '800ms',
-					'transition-timing-function': 'linear',
-					'transition-property': 'all',
-					'transform-style': 'preserve-3d'
-				});
+// 				this.cubeContainer = $('<div class="cube"></div>').css({
+// 					width: width+'px',
+// 					height: height+'px',
+// 					position: 'relative'
+// 				}).css3({
+// 					'transition-duration': '800ms',
+// 					'transition-timing-function': 'linear',
+// 					'transition-property': 'all',
+// 					'transform-style': 'preserve-3d'
+// 				});
 
-				var css = {
-					height: '100%',
-					width: '100%',
-					position: 'absolute',
-					top: '0px',
-					left: '0px'
-				};
+// 				var css = {
+// 					height: '100%',
+// 					width: '100%',
+// 					position: 'absolute',
+// 					top: '0px',
+// 					left: '0px'
+// 				};
 
-				var currentFace = $('<div class="face current"></div>').css($.extend(css, {
-					background: this.slider.image1.css('background-image')
-				})).css3({
-					'backface-visibility': 'hidden'
-				});
+// 				var currentFace = $('<div class="face current"></div>').css($.extend(css, {
+// 					background: this.slider.image1.css('background-image')
+// 				})).css3({
+// 					'backface-visibility': 'hidden'
+// 				});
 
-				this.cubeContainer.append(currentFace);
+// 				this.cubeContainer.append(currentFace);
 
-				var nextFace = $('<div class="face next"></div>').css($.extend(css, {
-					background: this.slider.image2.css('background-image')
-				})).css3({
-					'transform' : this.options.transitionStrings.call(this, this.options.direction, 'nextFace'),
-					'backface-visibility': 'hidden'
-				});
+// 				var nextFace = $('<div class="face next"></div>').css($.extend(css, {
+// 					background: this.slider.image2.css('background-image')
+// 				})).css3({
+// 					'transform' : this.options.transitionStrings.call(this, this.options.direction, 'nextFace'),
+// 					'backface-visibility': 'hidden'
+// 				});
 
-				this.cubeContainer.append(nextFace);
+// 				this.cubeContainer.append(nextFace);
 
-				this.slider.image1.append(this.cubeContainer);
-			},
-			execute: function() {
-				var _this = this;
+// 				this.slider.image1.append(this.cubeContainer);
+// 			},
+// 			execute: function() {
+// 				var _this = this;
 
-				var width = this.slider.image1.width();
-				var height = this.slider.image1.height();
+// 				var width = this.slider.image1.width();
+// 				var height = this.slider.image1.height();
 
-				this.slider.image2.hide();
-				this.cubeContainer.transitionEnd(function(){
-					_this.slider.image2.show();
+// 				this.slider.image2.hide();
+// 				this.cubeContainer.transitionEnd(function(){
+// 					_this.slider.image2.show();
 
-					_this.finished();
-				});
+// 					_this.finished();
+// 				});
 				
-				setTimeout(function(){
-					_this.cubeContainer.css3({
-						'transform' : _this.options.transitionStrings.call(_this, _this.options.direction, 'container')
-					});
-				}, 50);
-			},
-			transitionStrings: function(direction, elem) {
-				var width = this.slider.image1.width();
-				var height = this.slider.image1.height();
+// 				setTimeout(function(){
+// 					_this.cubeContainer.css3({
+// 						'transform' : _this.options.transitionStrings.call(_this, _this.options.direction, 'container')
+// 					});
+// 				}, 50);
+// 			},
+// 			transitionStrings: function(direction, elem) {
+// 				var width = this.slider.image1.width();
+// 				var height = this.slider.image1.height();
 
-				// Define the various transforms that are required to perform various cube rotations
-				var t = {
-					'up' : {
-						'nextFace': flux.browser.rotateX(-90) + ' ' + flux.browser.translate(0, height/2, height/2),
-						'container': flux.browser.rotateX(90) + ' ' + flux.browser.translate(0, -height/2, height/2)
-					},
-					'down' : {
-						'nextFace': flux.browser.rotateX(90) + ' ' + flux.browser.translate(0, -height/2, height/2),
-						'container': flux.browser.rotateX(-90) + ' ' + flux.browser.translate(0, height/2, height/2)
-					},
-					'left' : {
-						'nextFace': flux.browser.rotateY(90) + ' ' + flux.browser.translate(width/2, 0, width/2),
-						'container': flux.browser.rotateY(-90) + ' ' + flux.browser.translate(-width/2, 0, width/2)
-					},
-					'right' : {
-						'nextFace': flux.browser.rotateY(-90) + ' ' + flux.browser.translate(-width/2, 0, width/2),
-						'container': flux.browser.rotateY(90) + ' ' + flux.browser.translate(width/2, 0, width/2)
-					}
-				};
+// 				// Define the various transforms that are required to perform various cube rotations
+// 				var t = {
+// 					'up' : {
+// 						'nextFace': flux.browser.rotateX(-90) + ' ' + flux.browser.translate(0, height/2, height/2),
+// 						'container': flux.browser.rotateX(90) + ' ' + flux.browser.translate(0, -height/2, height/2)
+// 					},
+// 					'down' : {
+// 						'nextFace': flux.browser.rotateX(90) + ' ' + flux.browser.translate(0, -height/2, height/2),
+// 						'container': flux.browser.rotateX(-90) + ' ' + flux.browser.translate(0, height/2, height/2)
+// 					},
+// 					'left' : {
+// 						'nextFace': flux.browser.rotateY(90) + ' ' + flux.browser.translate(width/2, 0, width/2),
+// 						'container': flux.browser.rotateY(-90) + ' ' + flux.browser.translate(-width/2, 0, width/2)
+// 					},
+// 					'right' : {
+// 						'nextFace': flux.browser.rotateY(-90) + ' ' + flux.browser.translate(-width/2, 0, width/2),
+// 						'container': flux.browser.rotateY(90) + ' ' + flux.browser.translate(width/2, 0, width/2)
+// 					}
+// 				};
 
-				return (t[direction] && t[direction][elem]) ? t[direction][elem] : false;
-			}
-		}, opts));	
-	};
-})(window.jQuery || window.Zepto);
+// 				return (t[direction] && t[direction][elem]) ? t[direction][elem] : false;
+// 			}
+// 		}, opts));	
+// 	};
+// })(window.jQuery || window.Zepto);
 
 (function($) {
 	flux.transitions.tiles3d = function(fluxslider, opts) {
@@ -1340,250 +1340,250 @@ window.flux = {
 	};
 })(window.jQuery || window.Zepto);
 
-(function($) {
-	flux.transitions.turn = function(fluxslider, opts) {
-		return new flux.transition(fluxslider, $.extend({
-			requires3d: true,
-			perspective: 1300,
-			direction: 'left',
-			setup: function() {				
-				var tab = $('<div class="tab"></div>').css({
-						width: '50%',
-						height: '100%',
-						position: 'absolute',
-						top: '0px',
-						left: this.options.direction == 'left' ? '50%' : '0%',
-						'z-index':101
-					}).css3({
-						'transform-style': 'preserve-3d',
-						'transition-duration': '1000ms',
-						'transition-timing-function': 'ease-out',
-						'transition-property': 'all',
-						'transform-origin': this.options.direction == 'left' ? 'left center' : 'right center'
-					}),
+// (function($) {
+// 	flux.transitions.turn = function(fluxslider, opts) {
+// 		return new flux.transition(fluxslider, $.extend({
+// 			requires3d: true,
+// 			perspective: 1300,
+// 			direction: 'left',
+// 			setup: function() {				
+// 				var tab = $('<div class="tab"></div>').css({
+// 						width: '50%',
+// 						height: '100%',
+// 						position: 'absolute',
+// 						top: '0px',
+// 						left: this.options.direction == 'left' ? '50%' : '0%',
+// 						'z-index':101
+// 					}).css3({
+// 						'transform-style': 'preserve-3d',
+// 						'transition-duration': '1000ms',
+// 						'transition-timing-function': 'ease-out',
+// 						'transition-property': 'all',
+// 						'transform-origin': this.options.direction == 'left' ? 'left center' : 'right center'
+// 					}),
 
-				front = $('<div></div>').appendTo(tab).css({
-						'background-image': this.slider.image1.css('background-image'),
-						'background-position': (this.options.direction == 'left' ? '-'+(this.slider.image1.width()/2) : 0)+'px 0',
-						width: '100%',
-						height: '100%',
-						position: 'absolute',
-						top: '0',
-						left: '0',
-						'-moz-transform': 'translateZ(1px)'
-					}).css3({
-						'backface-visibility': 'hidden'
-					}),
+// 				front = $('<div></div>').appendTo(tab).css({
+// 						'background-image': this.slider.image1.css('background-image'),
+// 						'background-position': (this.options.direction == 'left' ? '-'+(this.slider.image1.width()/2) : 0)+'px 0',
+// 						width: '100%',
+// 						height: '100%',
+// 						position: 'absolute',
+// 						top: '0',
+// 						left: '0',
+// 						'-moz-transform': 'translateZ(1px)'
+// 					}).css3({
+// 						'backface-visibility': 'hidden'
+// 					}),
 
-				back = $('<div></div>').appendTo(tab).css({
-						'background-image': this.slider.image2.css('background-image'),
-						'background-position': (this.options.direction == 'left' ? 0 : '-'+(this.slider.image1.width()/2))+'px 0',
-						width: '100%',
-						height: '100%',
-						position: 'absolute',
-						top: '0',
-						left: '0'
-					}).css3({
-						transform: flux.browser.rotateY(180),
-						'backface-visibility': 'hidden'
-					}),
+// 				back = $('<div></div>').appendTo(tab).css({
+// 						'background-image': this.slider.image2.css('background-image'),
+// 						'background-position': (this.options.direction == 'left' ? 0 : '-'+(this.slider.image1.width()/2))+'px 0',
+// 						width: '100%',
+// 						height: '100%',
+// 						position: 'absolute',
+// 						top: '0',
+// 						left: '0'
+// 					}).css3({
+// 						transform: flux.browser.rotateY(180),
+// 						'backface-visibility': 'hidden'
+// 					}),
 
-				current = $('<div></div>').css({
-					position: 'absolute',
-					top: '0',
-					left: this.options.direction == 'left' ? '0' : '50%',
-					width: '50%',
-					height: '100%',
-					'background-image': this.slider.image1.css('background-image'),
-					'background-position': (this.options.direction == 'left' ? 0 : '-'+(this.slider.image1.width()/2))+'px 0',
-					'z-index':100
-				}),
+// 				current = $('<div></div>').css({
+// 					position: 'absolute',
+// 					top: '0',
+// 					left: this.options.direction == 'left' ? '0' : '50%',
+// 					width: '50%',
+// 					height: '100%',
+// 					'background-image': this.slider.image1.css('background-image'),
+// 					'background-position': (this.options.direction == 'left' ? 0 : '-'+(this.slider.image1.width()/2))+'px 0',
+// 					'z-index':100
+// 				}),
 
-				overlay = $('<div class="overlay"></div>').css({
-					position: 'absolute',
-					top: '0',
-					left: this.options.direction == 'left' ? '50%' : '0',
-					width: '50%',
-					height: '100%',
-					background: '#000',
-					opacity: 1
-				}).css3({
-					'transition-duration': '800ms',
-					'transition-timing-function': 'linear',
-					'transition-property': 'opacity'
-				}),
+// 				overlay = $('<div class="overlay"></div>').css({
+// 					position: 'absolute',
+// 					top: '0',
+// 					left: this.options.direction == 'left' ? '50%' : '0',
+// 					width: '50%',
+// 					height: '100%',
+// 					background: '#000',
+// 					opacity: 1
+// 				}).css3({
+// 					'transition-duration': '800ms',
+// 					'transition-timing-function': 'linear',
+// 					'transition-property': 'opacity'
+// 				}),
 
-				container = $('<div></div>').css3({
-					width: '100%',
-					height: '100%'
-				}).css3({
-					'perspective': this.options.perspective,
-					'perspective-origin': '50% 50%'
-				}).append(tab).append(current).append(overlay);
+// 				container = $('<div></div>').css3({
+// 					width: '100%',
+// 					height: '100%'
+// 				}).css3({
+// 					'perspective': this.options.perspective,
+// 					'perspective-origin': '50% 50%'
+// 				}).append(tab).append(current).append(overlay);
 
-				this.slider.image1.append(container);
-			},
-			execute: function() {
-				var _this = this;
+// 				this.slider.image1.append(container);
+// 			},
+// 			execute: function() {
+// 				var _this = this;
 
-				this.slider.image1.find('div.tab').first().transitionEnd(function(){
-					_this.finished();
-				});
+// 				this.slider.image1.find('div.tab').first().transitionEnd(function(){
+// 					_this.finished();
+// 				});
 				
-				setTimeout(function(){
-					_this.slider.image1.find('div.tab').css3({
-						// 179 not 180 so that the tab rotates the correct way in Firefox
-						transform: flux.browser.rotateY(_this.options.direction == 'left' ? -179 : 179)
-					});
-					_this.slider.image1.find('div.overlay').css({
-						opacity: 0
-					});
-				}, 50);
-			}
-		}, opts));
-	};
-})(window.jQuery || window.Zepto);
+// 				setTimeout(function(){
+// 					_this.slider.image1.find('div.tab').css3({
+// 						// 179 not 180 so that the tab rotates the correct way in Firefox
+// 						transform: flux.browser.rotateY(_this.options.direction == 'left' ? -179 : 179)
+// 					});
+// 					_this.slider.image1.find('div.overlay').css({
+// 						opacity: 0
+// 					});
+// 				}, 50);
+// 			}
+// 		}, opts));
+// 	};
+// })(window.jQuery || window.Zepto);
 
-(function($) {
-	flux.transitions.slide = function(fluxslider, opts) {
-		return new flux.transition(fluxslider, $.extend({
-			direction: 'left',
-			setup: function() {
-				var width = this.slider.image1.width(),
-					height = this.slider.image1.height(),
+// (function($) {
+// 	flux.transitions.slide = function(fluxslider, opts) {
+// 		return new flux.transition(fluxslider, $.extend({
+// 			direction: 'left',
+// 			setup: function() {
+// 				var width = this.slider.image1.width(),
+// 					height = this.slider.image1.height(),
 
-				currentImage = $('<div class="current"></div>').css({
-					height: height+'px',
-					width: width+'px',
-					position: 'absolute',
-					top: '0px',
-					left: '0px',
-					background: this.slider[this.options.direction == 'left' ? 'image1' : 'image2'].css('background-image')	
-				}).css3({
-					'backface-visibility': 'hidden'
-				}),
+// 				currentImage = $('<div class="current"></div>').css({
+// 					height: height+'px',
+// 					width: width+'px',
+// 					position: 'absolute',
+// 					top: '0px',
+// 					left: '0px',
+// 					background: this.slider[this.options.direction == 'left' ? 'image1' : 'image2'].css('background-image')	
+// 				}).css3({
+// 					'backface-visibility': 'hidden'
+// 				}),
 
-				nextImage = $('<div class="next"></div>').css({
-					height: height+'px',
-					width: width+'px',
-					position: 'absolute',
-					top: '0px',
-					left: width+'px',
-					background: this.slider[this.options.direction == 'left' ? 'image2' : 'image1'].css('background-image')
-				}).css3({
-					'backface-visibility': 'hidden'
-				});
+// 				nextImage = $('<div class="next"></div>').css({
+// 					height: height+'px',
+// 					width: width+'px',
+// 					position: 'absolute',
+// 					top: '0px',
+// 					left: width+'px',
+// 					background: this.slider[this.options.direction == 'left' ? 'image2' : 'image1'].css('background-image')
+// 				}).css3({
+// 					'backface-visibility': 'hidden'
+// 				});
 
-				this.slideContainer = $('<div class="slide"></div>').css({
-					width: (2*width)+'px',
-					height: height+'px',
-					position: 'relative',
-					left: this.options.direction == 'left' ? '0px' : -width+'px',
-					'z-index': 101
-				}).css3({
-					'transition-duration': '600ms',
-					'transition-timing-function': 'ease-in',
-					'transition-property': 'all'
-				});
+// 				this.slideContainer = $('<div class="slide"></div>').css({
+// 					width: (2*width)+'px',
+// 					height: height+'px',
+// 					position: 'relative',
+// 					left: this.options.direction == 'left' ? '0px' : -width+'px',
+// 					'z-index': 101
+// 				}).css3({
+// 					'transition-duration': '600ms',
+// 					'transition-timing-function': 'ease-in',
+// 					'transition-property': 'all'
+// 				});
 
-				this.slideContainer.append(currentImage).append(nextImage);
+// 				this.slideContainer.append(currentImage).append(nextImage);
 
-				this.slider.image1.append(this.slideContainer);
-			},
-			execute: function() {
-				var _this = this,
-					delta = this.slider.image1.width();
+// 				this.slider.image1.append(this.slideContainer);
+// 			},
+// 			execute: function() {
+// 				var _this = this,
+// 					delta = this.slider.image1.width();
 
-				if(this.options.direction == 'left')
-					delta = -delta;
+// 				if(this.options.direction == 'left')
+// 					delta = -delta;
 
-				this.slideContainer.transitionEnd(function(){
-					_this.finished();
-				});
+// 				this.slideContainer.transitionEnd(function(){
+// 					_this.finished();
+// 				});
 				
-				setTimeout(function(){
-					_this.slideContainer.css3({
-						'transform' : flux.browser.translate(delta)
-					});
-				}, 50);
-			}
-		}, opts));	
-	};
-})(window.jQuery || window.Zepto);
+// 				setTimeout(function(){
+// 					_this.slideContainer.css3({
+// 						'transform' : flux.browser.translate(delta)
+// 					});
+// 				}, 50);
+// 			}
+// 		}, opts));	
+// 	};
+// })(window.jQuery || window.Zepto);
 
-(function($) {
-	flux.transitions.swipe = function(fluxslider, opts) {
-		return new flux.transition(fluxslider, $.extend({
-			setup: function() {
-				var img = $('<div></div>').css({
-					width: '100%',
-					height: '100%',
-					'background-image': this.slider.image1.css('background-image')
-				}).css3({
-					'transition-duration': '1600ms',
-					'transition-timing-function': 'ease-in',
-					'transition-property': 'all',
-					'mask-image': '-webkit-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 48%, rgba(0,0,0,1) 52%, rgba(0,0,0,1) 100%)',
-					'mask-position': '70%',
-					'mask-size': '400%'
-				});
+// (function($) {
+// 	flux.transitions.swipe = function(fluxslider, opts) {
+// 		return new flux.transition(fluxslider, $.extend({
+// 			setup: function() {
+// 				var img = $('<div></div>').css({
+// 					width: '100%',
+// 					height: '100%',
+// 					'background-image': this.slider.image1.css('background-image')
+// 				}).css3({
+// 					'transition-duration': '1600ms',
+// 					'transition-timing-function': 'ease-in',
+// 					'transition-property': 'all',
+// 					'mask-image': '-webkit-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 48%, rgba(0,0,0,1) 52%, rgba(0,0,0,1) 100%)',
+// 					'mask-position': '70%',
+// 					'mask-size': '400%'
+// 				});
 				
-				this.slider.image1.append(img);
-			},
-			execute: function() {
-				//return;
-				var _this = this,
-					img = this.slider.image1.find('div');
+// 				this.slider.image1.append(img);
+// 			},
+// 			execute: function() {
+// 				//return;
+// 				var _this = this,
+// 					img = this.slider.image1.find('div');
 
-				// Get notified when the last transition has completed
-				$(img).transitionEnd(function(){
-					_this.finished();
-				});
+// 				// Get notified when the last transition has completed
+// 				$(img).transitionEnd(function(){
+// 					_this.finished();
+// 				});
 
-				setTimeout(function(){
-					$(img).css3({
-						'mask-position': '30%'
-					});
-				}, 50);
-			},
-			compatibilityCheck: function() {
-				return flux.browser.supportsCSSProperty('MaskImage');
-			}
-		}, opts));
-	};
-})(window.jQuery || window.Zepto);
+// 				setTimeout(function(){
+// 					$(img).css3({
+// 						'mask-position': '30%'
+// 					});
+// 				}, 50);
+// 			},
+// 			compatibilityCheck: function() {
+// 				return flux.browser.supportsCSSProperty('MaskImage');
+// 			}
+// 		}, opts));
+// 	};
+// })(window.jQuery || window.Zepto);
 
-(function($) {
-	flux.transitions.dissolve = function(fluxslider, opts) {
-		return new flux.transition(fluxslider, $.extend({
-			setup: function() {
-				var img = $('<div class="image"></div>').css({
-					width: '100%',
-					height: '100%',
-					'background-image': this.slider.image1.css('background-image')	
-				}).css3({
-					'transition-duration': '600ms',
-					'transition-timing-function': 'ease-in',
-					'transition-property': 'opacity'
-				});
+// (function($) {
+// 	flux.transitions.dissolve = function(fluxslider, opts) {
+// 		return new flux.transition(fluxslider, $.extend({
+// 			setup: function() {
+// 				var img = $('<div class="image"></div>').css({
+// 					width: '100%',
+// 					height: '100%',
+// 					'background-image': this.slider.image1.css('background-image')	
+// 				}).css3({
+// 					'transition-duration': '600ms',
+// 					'transition-timing-function': 'ease-in',
+// 					'transition-property': 'opacity'
+// 				});
 				
-				this.slider.image1.append(img);
-			},
-			execute: function() {
-				var _this = this,
-					img = this.slider.image1.find('div.image');
+// 				this.slider.image1.append(img);
+// 			},
+// 			execute: function() {
+// 				var _this = this,
+// 					img = this.slider.image1.find('div.image');
 
-				// Get notified when the last transition has completed
-				$(img).transitionEnd(function(){
-					_this.finished();
-				});
+// 				// Get notified when the last transition has completed
+// 				$(img).transitionEnd(function(){
+// 					_this.finished();
+// 				});
 
-				setTimeout(function(){
-					$(img).css({
-						'opacity': '0.0'
-					});
-				}, 50);
-			}
-		}, opts));
-	};
-})(window.jQuery || window.Zepto);
+// 				setTimeout(function(){
+// 					$(img).css({
+// 						'opacity': '0.0'
+// 					});
+// 				}, 50);
+// 			}
+// 		}, opts));
+// 	};
+// })(window.jQuery || window.Zepto);
