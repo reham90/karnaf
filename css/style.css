@@ -2468,6 +2468,7 @@ html[dir="ltr"] .shop-btn{
   font-size: 18px;
   color: var(--sec-main-color);
 }
+
 .fluxslider .pagination li:hover{
   color: var(--main-hover);
 }
@@ -2548,7 +2549,7 @@ ol.breadcrumb li:not(.active):after {
   margin-bottom: 15px;
 }
 .fluxslider .images{
-  width: 210px !important;
+  width: 170px !important;
   min-height: 310px !important;
  /* height:340px !important; */
 }
@@ -3092,6 +3093,9 @@ html[dir="ltr"] .contact-list{
   .join-us-parag{
     font-size: 18px;
   }
+  .circle-icon{
+    margin-inline-end: 5px;
+  }
   .licened-block .services-figure{
    
     height: 100px;
@@ -3263,6 +3267,12 @@ html[dir="ltr"] .contact-list{
 
   
 }
+@media only screen and (max-width: 991px)  and (min-width: 490px)  {
+  .fluxslider .images{
+    width: 240px !important;
+  }
+
+}
 
 
 @media only screen and (max-width: 994px)  and (min-width: 768px)  {
@@ -3393,3 +3403,6 @@ html[dir="ltr"] .contact-list{
     margin-top: 0 !important;
   }
 } */
+
+
+

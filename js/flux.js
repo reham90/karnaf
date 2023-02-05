@@ -251,6 +251,7 @@ window.flux = {
            'font-family' : "Hacen Tunisia Lt",
             'font-size': '18px',
             'color': 'var(--sec-main-color)',
+			'white-space':'nowrap',
 						'cursor': 'pointer'
 					}).appendTo(_this.pagination);
          
