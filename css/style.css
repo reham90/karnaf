@@ -1503,7 +1503,7 @@ font-family: "Montserrat-Arabic-Light";
     grid-template-columns: repeat(1,1fr);
   }
   #css3dimageslider ul li{
-    width: 300px;
+    width: 100%;
   }
   #css3dimageslider.transparency img{
     height: 315px;
