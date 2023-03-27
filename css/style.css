@@ -43,6 +43,14 @@ html{
     color: var(--sec-main-color);
     white-space: nowrap;
     line-height: 1.751;
+    display: flex;
+    align-items: center;
+}
+#css3dimagePager li:before{
+  content:"";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-inline-end: 3px;
 }
 #css3dimagePager li.active, #css3dtransparency.active {
 	
@@ -83,7 +91,7 @@ html{
 #css3dimageslider ul li {
 	position: absolute;
 	/* height: 281px; */
-	width: 450px;
+	width: 570px;
 	padding: 0px;
 }
 #css3dimageslider ul li:nth-child(1) {
@@ -93,10 +101,10 @@ html{
 	transform: translateZ(225px);
 }
 #css3dimageslider ul li:nth-child(2) {
-	-webkit-transform: rotateY(90deg) translateZ(225px);
-	-moz-transform: rotateY(90deg) translateZ(225px);
-	-ms-transform: rotateY(90deg) translateZ(225px);
-	transform: rotateY(90deg) translateZ(225px);
+	-webkit-transform: translateZ(225px);
+	-moz-transform:  translateZ(225px);
+	-ms-transform: translateZ(225px);
+	transform:  translateZ(225px);
 }
 #css3dimageslider ul li:nth-child(3) {
 	-webkit-transform: rotateY(180deg) translateZ(225px);
@@ -1495,7 +1503,7 @@ font-family: "Montserrat-Arabic-Light";
     grid-template-columns: repeat(1,1fr);
   }
   #css3dimageslider ul li{
-    width: 262px;
+    width: 300px;
   }
   #css3dimageslider.transparency img{
     height: 315px;
@@ -3336,7 +3344,9 @@ html[dir="ltr"] .contact-list{
   .ab-text p{
     margin-inline-end: 30px;
   }
-  
+  #css3dimageslider ul li{
+    width: 450px;
+  }
   .logo-sm img {
     max-width: 190px;
   }
