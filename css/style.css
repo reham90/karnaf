@@ -8,9 +8,110 @@ padding-top: 218px;
 position: relative;
 background-color: var(--main-color);
 }
+
 html{
   scroll-behavior: smooth;
   }
+  /* new slider */
+.slider-text h3{
+  text-align: start !important;
+}
+#css3dimagePager, #css3dtransparency {
+	display: block;
+	position: relative;
+	z-index: 11;
+	padding: 0 0 10px;
+	margin: 0;
+ 
+}
+.brand-slider{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+ 
+  min-height: 610px;
+}
+#css3dimagePager li {
+	
+	list-style: none;
+  width: 100%;
+	cursor: pointer;
+  font-family: "Hacen Tunisia Lt";
+    font-size: 18px;
+    color: var(--sec-main-color);
+    white-space: nowrap;
+    line-height: 1.751;
+}
+#css3dimagePager li.active, #css3dtransparency.active {
+	
+  color: red;
+}
+#css3dimageslider {
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000px;
+	-ms-perspective: 1000;
+	perspective: 1000;
+	-webkit-perspective-origin: 50% 100px;
+	-moz-perspective-origin: 50% 100px;
+	-ms-perspective-origin: 50% 100px;
+	perspective-origin: 50% 100px;
+	margin: 0;
+	width: 100%;
+	
+}
+#css3dimageslider ul {
+	position: relative;
+	margin: 0;
+  list-style: none;
+	
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform-origin: 50% 100px 0;
+	-moz-transform-origin: 50% 100px 0;
+	-ms-transform-origin: 50% 100px 0;
+	transform-origin: 50% 100px 0;
+	-webkit-transition: all 1.0s ease-in-out;
+	-moz-transition: all 1.0s ease-in-out;
+	-ms-transition: all 1.0s ease-in-out;
+	transition: all 1.0s ease-in-out;
+}
+#css3dimageslider ul li {
+	position: absolute;
+	/* height: 281px; */
+	width: 450px;
+	padding: 0px;
+}
+#css3dimageslider ul li:nth-child(1) {
+	-webkit-transform: translateZ(225px);
+	-moz-transform: translateZ(225px);
+	-ms-transform: translateZ(225px);
+	transform: translateZ(225px);
+}
+#css3dimageslider ul li:nth-child(2) {
+	-webkit-transform: rotateY(90deg) translateZ(225px);
+	-moz-transform: rotateY(90deg) translateZ(225px);
+	-ms-transform: rotateY(90deg) translateZ(225px);
+	transform: rotateY(90deg) translateZ(225px);
+}
+#css3dimageslider ul li:nth-child(3) {
+	-webkit-transform: rotateY(180deg) translateZ(225px);
+	-moz-transform: rotateY(180deg) translateZ(225px);
+	-ms-transform: rotateY(180deg) translateZ(225px);
+	transform: rotateY(180deg) translateZ(225px);
+}
+#css3dimageslider ul li:nth-child(4) {
+	-webkit-transform: rotateY(-90deg) translateZ(225px);
+	-moz-transform: rotateY(-90deg) translateZ(225px);
+	-ms-transform: rotateY(-90deg) translateZ(225px);
+	transform: rotateY(-90deg) translateZ(225px);
+}
+#css3dimageslider.transparency img {
+	opacity:1;
+}
+
+
+/* new slider */
 
 @media (max-width: 991px) {
   body {
@@ -1382,6 +1483,20 @@ font-family: "Montserrat-Arabic-Light";
 
 
 @media (max-width: 991px) {
+  .brand-slider{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1,1fr);
+  }
+  #css3dimageslider ul li{
+    width: 250px;
+  }
+ 
+  #css3dimageslider{
+    order: -1;
+    height: 315px;
+    width: 100%;
+  }
 
   .licened-section {
     /* margin-top: 0; */
@@ -3236,6 +3351,8 @@ html[dir="ltr"] .contact-list{
   text-align: end;
   font-size: 16px;
 }
+
+
 .fluxslider{
   flex-wrap: nowrap;
   flex-direction: row-reverse;
